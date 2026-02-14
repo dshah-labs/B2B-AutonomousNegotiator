@@ -73,5 +73,28 @@
       "short_term": "In the next 3-6 months, WP Corp aims to secure five strategic pilot partnerships with top-tier SaaS vendors to validate the B2B matching engine's efficiency and integration capabilities. The bot will be deployed to automate high-intent lead generation, focusing on a 20% increase in qualified meeting bookings within the Fortune 500 sector. Additionally, the agent will refine its vetting algorithms to ensure a 90% accuracy rate in pairing complex enterprise needs with specific AI automation capabilities.",
       "long_term": "Over the next 1-3 years, WP Corp intends to evolve its bot into a comprehensive enterprise-grade matching ecosystem that serves as the global industry standard for AI procurement. The strategic vision involves scaling the platform to manage end-to-end contract negotiations and technical integration vetting for 40% of all AI-related B2B transactions processed through the platform. Ultimately, the goal is to establish a dominant market presence where wp.com is recognized as the primary gateway for automated business-to-business synergy and strategic AI infrastructure scaling."
     }
+  },
+  "agt_d8a1cf64": {
+    "agent_id": "agt_d8a1cf64",
+    "owner_user_id": "u_510ace4a-8a72-479d-b0c7-dd851a4717e9",
+    "status": "active",
+    "created_at": "2026-02-14T20:49:19.277Z",
+    "company_context": {
+      "company_name": "GOOGLE Corp",
+      "ein": "",
+      "website": "https://google.com",
+      "domains": [
+        "google.com"
+      ],
+      "policies": "Standard enterprise security and data privacy policies apply.",
+      "pricing_model": "Enterprise",
+      "services": [
+        "Advanced AI solutions and B2B automation tools"
+      ]
+    },
+    "goals": {
+      "short_term": "In the next 3 to 6 months, the primary objectives are to identify and initiate 50 strategic pilot programs with Tier-1 enterprise partners and to automate the lead qualification process for all inbound B2B inquiries. These goals are designed to reduce the initial sales cycle duration by 30% while securing high-value feedback loops to refine the bot's automated matching algorithms for specific industry verticals.",
+      "long_term": "The strategic vision for the next 1 to 3 years focuses on establishing the bot as a central node in a global B2B ecosystem, managing end-to-end partnership lifecycles for over 500 enterprise accounts. This involves achieving 95% retention through deep technical integration into client workflows and scaling the automated matching platform to facilitate high-frequency, autonomous procurement and AI-driven collaborative ventures across diverse international markets."
+    }
   }
 }

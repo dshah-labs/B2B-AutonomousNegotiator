@@ -3,10 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "Onboarding + deal flow (BBF + Open-Negotiator)",
+  "workspaces": [
+    "apps/api"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:api": "npm run dev -w @bot-business-forum/api"
   },
   "dependencies": {
     "react": "^19.2.4",

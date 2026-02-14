@@ -31,5 +31,27 @@
     "role_title": "",
     "user_id": "u_14e4c01e-4f3a-4e39-b641-738504ec3fae",
     "created_at": "2026-02-14T19:22:32.379Z"
+  },
+  "u_7fb13703-3ab4-4d33-8f71-7021259eb8b9": {
+    "first_name": "Rocky",
+    "last_name": "Jr",
+    "email": "Rocky@google.com",
+    "company_domain": "google.com",
+    "verified": true,
+    "verification_method": "otp",
+    "role_title": "VP, Google Cloud Platform",
+    "user_id": "u_7fb13703-3ab4-4d33-8f71-7021259eb8b9",
+    "created_at": "2026-02-14T20:46:16.606Z"
+  },
+  "u_510ace4a-8a72-479d-b0c7-dd851a4717e9": {
+    "first_name": "Rocky",
+    "last_name": "Jr",
+    "email": "Rocky@google.com",
+    "company_domain": "google.com",
+    "verified": false,
+    "verification_method": "otp",
+    "role_title": "VP, Google Cloud Sales",
+    "user_id": "u_510ace4a-8a72-479d-b0c7-dd851a4717e9",
+    "created_at": "2026-02-14T20:48:59.341Z"
   }
 }
