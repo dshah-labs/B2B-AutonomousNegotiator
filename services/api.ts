@@ -1,27 +1,84 @@
 
-import { OnboardingPayload } from "../types";
-import { DEMO_AGENT_ID, DEMO_OTP } from "../constants";
+import { OnboardingPayload, UserData, AgentData } from "../types";
+import { DEMO_OTP } from "../constants";
 
-const DEMO_MODE = true; // In real Next.js this would be process.env.NEXT_PUBLIC_DEMO_MODE
+const USERS_KEY = "BBF_MOCK_USERS";
+const AGENTS_KEY = "BBF_MOCK_AGENTS";
+
+// Helper to initialize storage from existing JSON structure
+const initStorage = () => {
+  if (!localStorage.getItem(USERS_KEY)) {
+    localStorage.setItem(USERS_KEY, JSON.stringify({}));
+  }
+  if (!localStorage.getItem(AGENTS_KEY)) {
+    localStorage.setItem(AGENTS_KEY, JSON.stringify({}));
+  }
+};
 
 export const api = {
-  signup: async (email: string, firstName: string, lastName: string) => {
-    console.log("POST /signup", { email, firstName, lastName });
+  getRegistry: () => {
+    initStorage();
+    return {
+      users: JSON.parse(localStorage.getItem(USERS_KEY) || "{}"),
+      agents: JSON.parse(localStorage.getItem(AGENTS_KEY) || "{}")
+    };
+  },
+
+  signup: async (userData: Partial<UserData>) => {
+    console.log("POST /signup", userData);
     await new Promise(res => setTimeout(res, 800));
-    return { status: "success" };
+    initStorage();
+    
+    const users = JSON.parse(localStorage.getItem(USERS_KEY) || "{}");
+    const userId = `u_${Math.random().toString(36).substr(2, 9)}`;
+    const newUser: UserData = {
+      ...userData as UserData,
+      user_id: userId,
+      created_at: new Date().toISOString(),
+      verified: false,
+      verification_method: "otp"
+    };
+    
+    users[userId] = newUser;
+    localStorage.setItem(USERS_KEY, JSON.stringify(users));
+    return newUser;
   },
 
   verifyOtp: async (email: string, otp: string) => {
     console.log("POST /verify-otp", { email, otp });
     await new Promise(res => setTimeout(res, 800));
-    if (DEMO_MODE && otp === DEMO_OTP) return { status: "success" };
-    if (!DEMO_MODE) return { status: "success" }; // Simulate backend success
+    
+    if (otp === DEMO_OTP) {
+      const users = JSON.parse(localStorage.getItem(USERS_KEY) || "{}");
+      const userKey = Object.keys(users).find(k => users[k].email === email);
+      if (userKey) {
+        users[userKey].verified = true;
+        localStorage.setItem(USERS_KEY, JSON.stringify(users));
+      }
+      return { status: "success" };
+    }
     throw new Error("Invalid OTP");
   },
 
   createAgent: async (payload: OnboardingPayload) => {
     console.log("POST /agents", payload);
     await new Promise(res => setTimeout(res, 1500));
-    return { agent_id: DEMO_AGENT_ID };
+    initStorage();
+
+    const agents = JSON.parse(localStorage.getItem(AGENTS_KEY) || "{}");
+    const agentId = `agt_${Math.random().toString(36).substr(2, 9)}`;
+    
+    const newAgent: AgentData = {
+      agent_id: agentId,
+      owner_user_id: payload.user.user_id || "unknown",
+      status: "active",
+      created_at: new Date().toISOString(),
+      company_context: payload.agent.company_context!,
+      goals: payload.agent.goals!
+    };
+
+    agents[agentId] = newAgent;
+    localStorage.setItem(AGENTS_KEY, JSON.stringify(agents));
+    return { agent_id: agentId };
   }
 };

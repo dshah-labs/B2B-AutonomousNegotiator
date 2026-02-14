@@ -8,9 +8,15 @@ export enum PricingModel {
 }
 
 export interface UserData {
+  user_id?: string;
+  email: string;
   first_name: string;
   last_name: string;
-  email: string;
+  company_domain: string;
+  created_at?: string;
+  verified: boolean;
+  verification_method: string;
+  role_title?: string;
 }
 
 export interface CompanyData {
@@ -20,7 +26,7 @@ export interface CompanyData {
   domains: string[];
   policies: string;
   pricing_model: PricingModel;
-  services: string;
+  services: string[];
 }
 
 export interface GoalsData {
@@ -28,10 +34,18 @@ export interface GoalsData {
   long_term: string;
 }
 
+export interface AgentData {
+  agent_id: string;
+  owner_user_id: string;
+  status: 'draft' | 'active';
+  created_at: string;
+  company_context: CompanyData;
+  goals: GoalsData;
+}
+
 export interface OnboardingPayload {
   user: UserData;
-  company: CompanyData;
-  goals: GoalsData;
+  agent: Partial<AgentData>;
 }
 
 export enum Step {

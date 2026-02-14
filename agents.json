@@ -1,0 +1,41 @@
+
+{
+  "agt_001_expander": {
+    "agent_id": "agt_001_expander",
+    "owner_user_id": "u_8f2d1e9a-4b7c-4123-9e8a-6b2f4c1a90d1",
+    "status": "active",
+    "created_at": "2024-10-24T10:15:00Z",
+    "company_context": {
+      "company_name": "Logisticly IO",
+      "ein": "12-3456789",
+      "website": "https://logisticly.io",
+      "domains": ["logistics", "supply-chain", "saas"],
+      "policies": "GDPR compliant, SOC2 Type II",
+      "pricing_model": "Usage-based",
+      "services": ["Last-mile delivery tracking", "Inventory optimization API"]
+    },
+    "goals": {
+      "short_term": "Find 3 distribution partners in Southeast Asia by Q4.",
+      "long_term": "Automate all cross-border partnership compliance checks."
+    }
+  },
+  "agt_002_finance": {
+    "agent_id": "agt_002_finance",
+    "owner_user_id": "u_2a5b8c9d-1e4f-4d2a-8c9e-3b2a1f0c9d8e",
+    "status": "active",
+    "created_at": "2024-10-25T15:00:00Z",
+    "company_context": {
+      "company_name": "Fintech Flow",
+      "ein": "98-7654321",
+      "website": "https://fintech-flow.com",
+      "domains": ["banking", "payments", "compliance"],
+      "policies": "Strict KYB/KYC required for all bot interactions.",
+      "pricing_model": "Enterprise",
+      "services": ["Instant payment rails", "Automated settlement"]
+    },
+    "goals": {
+      "short_term": "Integrate with 2 major regional banks.",
+      "long_term": "Become the primary settlement layer for B2B bot transactions."
+    }
+  }
+}
